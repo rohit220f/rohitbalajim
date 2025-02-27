@@ -1,0 +1,49 @@
+
+class Company {
+
+   
+    static String companyName = "Tech Innovators Inc."; 
+
+    
+    String employeeName;
+
+ 
+    public Company(String employeeName) {
+        this.employeeName = employeeName;
+    }
+
+    
+    public void displayDetails() {
+        System.out.println("Company: " + companyName);
+        System.out.println("Employee: " + employeeName);
+    }
+
+   
+    public static void displayCompanyDetails() {
+        System.out.println("Company: " + companyName);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+       
+        Company emp1 = new Company("John Doe");
+        Company emp2 = new Company("Jane Smith");
+
+       
+        emp1.displayDetails();  
+        emp2.displayDetails();  
+
+        
+        Company.companyName = "Global Solutions";
+
+  
+        System.out.println("\nAfter updating the company name:\n");
+
+        emp1.displayDetails();  
+        emp2.displayDetails(); 
+
+        
+        Company.displayCompanyDetails();
+    }
+}
