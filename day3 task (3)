@@ -1,0 +1,43 @@
+class Employee {
+    private int id;
+    private double salary;
+    private static final double MIN_SALARY = 30000.0; 
+
+
+    public Employee(int id, double salary) {
+        this.id = id;
+        setSalary(salary); // Use setter to ensure validation
+    }
+
+
+    public double getSalary() {
+        return salary;
+    }
+
+
+    public void setSalary(double salary) {
+        if (salary >= MIN_SALARY) {
+            this.salary = salary;
+        } else {
+            System.out.println("Salary must be at least " + MIN_SALARY);
+        }
+    }
+
+    public int getId() {
+        return id;
+    }
+
+  
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public static void main(String[] args) {
+        Employee emp = new Employee(101, 25000.0);
+        System.out.println("Employee ID: " + emp.getId());
+        System.out.println("Employee Salary: " + emp.getSalary());
+        
+        emp.setSalary(35000.0); // Valid salary update
+        System.out.println("Updated Salary: " + emp.getSalary());
+    }
+}
